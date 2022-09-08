@@ -246,17 +246,13 @@ public class OptionsPopupView extends ArrowPopup<Launcher>
             Toast.makeText(launcher, message, Toast.LENGTH_SHORT).show();
             return false;
         }
-        Intent intent = new Intent(Intent.ACTION_SET_WALLPAPER)
+        Intent intent = new Intent()
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 .putExtra(EXTRA_WALLPAPER_OFFSET,
                         launcher.getWorkspace().getWallpaperOffsetForCenterPage())
                 .putExtra(EXTRA_WALLPAPER_LAUNCH_SOURCE, "app_launched_launcher");
-        if (!Utilities.existsStyleWallpapers(launcher)) {
-            intent.putExtra(EXTRA_WALLPAPER_FLAVOR, "wallpaper_only");
-        } else {
-            intent.putExtra(EXTRA_WALLPAPER_FLAVOR, "focus_wallpaper");
-        }
         String pickerPackage = launcher.getString(R.string.wallpaper_picker_package);
+        intent.setComponent(android.content.ComponentName.unflattenFromString("com.google.android.apps.wallpaper/.picker.CategoryPickerActivity"));
         if (!TextUtils.isEmpty(pickerPackage)) {
             intent.setPackage(pickerPackage);
         }
