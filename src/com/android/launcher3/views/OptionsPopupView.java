@@ -252,7 +252,7 @@ public class OptionsPopupView extends ArrowPopup<Launcher>
                         launcher.getWorkspace().getWallpaperOffsetForCenterPage())
                 .putExtra(EXTRA_WALLPAPER_LAUNCH_SOURCE, "app_launched_launcher");
         String pickerPackage = launcher.getString(R.string.wallpaper_picker_package);
-        intent.setComponent(android.content.ComponentName.unflattenFromString("com.google.android.apps.wallpaper/.picker.CategoryPickerActivity"));
+        intent.setComponent(android.content.ComponentName.unflattenFromString("com.android.wallpaper/.picker.CategoryPickerActivity"));
         if (!TextUtils.isEmpty(pickerPackage)) {
             intent.setPackage(pickerPackage);
         }
