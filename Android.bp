@@ -138,7 +138,7 @@ android_library {
 // Build rule for Launcher3 app.
 //
 android_app {
-    name: "ArrowLauncher3",
+    name: "Launcher3",
 
     static_libs: [
         "Launcher3CommonDepsLib",
@@ -171,7 +171,6 @@ android_app {
     overrides: [
         "Home",
         "Launcher2",
-        "QuickSearchBox",
     ],
     required: [
         "privapp_whitelist_com.android.launcher3",
@@ -330,7 +329,7 @@ android_library {
 
 // Build rule for Launcher3 Go app for Android Go devices.
 android_app {
-    name: "ArrowLauncher3Go",
+    name: "Launcher3Go",
 
     static_libs: ["Launcher3CommonDepsLib"],
 
@@ -356,8 +355,6 @@ android_app {
         "Launcher2",
         "Launcher3",
         "Launcher3QuickStep",
-        "Launcher3Go",
-        "QuickSearchBox",
     ],
     required: [
         "privapp_whitelist_com.android.launcher3",
@@ -378,7 +375,7 @@ android_app {
 
 // Build rule for Quickstep app.
 android_app {
-    name: "ArrowLauncher",
+    name: "Launcher3QuickStep",
 
     static_libs: ["Launcher3QuickStepLib"],
     optimize: {
@@ -394,8 +391,6 @@ android_app {
         "Home",
         "Launcher2",
         "Launcher3",
-        "Launcher3QuickStep",
-        "QuickSearchBox",
     ],
     required: [
         "privapp_whitelist_com.android.launcher3",
@@ -418,7 +413,7 @@ android_app {
 
 // Build rule for Launcher3 Go app with quickstep for Android Go devices.
 android_app {
-    name: "ArrowLauncherGo",
+    name: "Launcher3QuickStepGo",
 
     static_libs: [
         "SystemUI-statsd",
@@ -455,8 +450,6 @@ android_app {
         "Launcher2",
         "Launcher3",
         "Launcher3QuickStep",
-        "Launcher3QuickStepGo",
-        "QuickSearchBox",
     ],
     required: [
         "privapp_whitelist_com.android.launcher3",
