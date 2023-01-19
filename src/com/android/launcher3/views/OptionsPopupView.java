@@ -257,6 +257,7 @@ public class OptionsPopupView extends ArrowPopup<Launcher>
             intent.putExtra(EXTRA_WALLPAPER_FLAVOR, "focus_wallpaper");
         }
         String pickerPackage = launcher.getString(R.string.wallpaper_picker_package);
+	intent.setComponent(android.content.ComponentName.unflattenFromString("com.android.wallpaper/.picker.CategoryPickerActivity"));
         if (!TextUtils.isEmpty(pickerPackage)) {
             intent.setPackage(pickerPackage);
         }
